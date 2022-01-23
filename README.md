@@ -125,3 +125,11 @@ const StyledScissorWindow = styled(ScissorWindow)`
   ...
 `
 ```
+
+## Roadmap
+
+Major TODOs
+
+- [ ] Controls support
+- [ ] Drei helpers support
+- [ ] Per-window camera

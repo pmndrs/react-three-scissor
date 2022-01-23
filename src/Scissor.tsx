@@ -1,10 +1,13 @@
 import React from 'react'
-import { Canvas, Props, useFrame } from '@react-three/fiber'
+import { useFrame, useThree } from '@react-three/fiber'
+import { useLayoutEffect } from 'react'
 import ScissorTunnel from './ScissorTunnel'
 import useScissorEvents from './useScissorEvents'
 import { Object3D } from 'three'
 
-function ScissorRenderer() {
+export default function useScissor() {
+  const gl = useThree((s) => s.gl)
+
   useScissorEvents()
   useFrame((state) => {
     const { gl, camera } = state
@@ -31,8 +34,7 @@ function ScissorRenderer() {
           gl.setViewport(left, positiveYUpBottom, width, height)
 
           // @ts-ignore
-          camera.aspect = rect.width / rect.height
-          // @ts-ignore
+          camera.aspect = width / height
           camera.updateProjectionMatrix()
 
           gl.render(child, camera)
@@ -41,28 +43,15 @@ function ScissorRenderer() {
     })
   }, 1)
 
-  // @ts-ignore
+  useLayoutEffect(() => {
+    if (gl.domElement.parentElement) {
+      gl.domElement.parentElement.style.position = 'fixed'
+      gl.domElement.parentElement.style.top = '0'
+      gl.domElement.parentElement.style.left = '0'
+      gl.domElement.parentElement.style.width = '100%'
+      gl.domElement.parentElement.style.height = '100%'
+    }
+  }, [gl])
+
   return <ScissorTunnel.Out />
-}
-
-type PartialBy<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>
-
-export default function ScissorCanvas({ children, ...rest }: PartialBy<Props, 'children'>) {
-  return (
-    <Canvas
-      style={{
-        position: 'fixed',
-        left: '0',
-        top: '0',
-        width: '100%',
-        height: '100%',
-        display: 'block',
-        ...rest.style,
-      }}
-      {...rest}
-    >
-      {children}
-      <ScissorRenderer />
-    </Canvas>
-  )
 }

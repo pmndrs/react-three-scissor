@@ -9,15 +9,7 @@ export default function ScissorWindow({ children, ...rest }: React.PropsWithChil
 
   return (
     <>
-      <div
-        ref={ref}
-        style={{
-          width: '100%',
-          height: '100%',
-          ...rest.style,
-        }}
-        {...rest}
-      />
+      <div ref={ref} {...rest} />
       {window && (
         <ScissorTunnel.In>
           <scene userData={{ __Scissor: window }}>{children}</scene>

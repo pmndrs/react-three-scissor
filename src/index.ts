@@ -1,4 +1,4 @@
-import ScissorCanvas from './ScissorCanvas'
+import Scissor from './Scissor'
 import ScissorWindow from './ScissorWindow'
 
-export { ScissorCanvas, ScissorWindow }
+export { Scissor, ScissorWindow }

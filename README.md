@@ -1,1 +1,3 @@
-# react-three-scissor
+```shell
+npm install @react-three/scissor
+```

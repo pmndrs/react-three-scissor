@@ -17,9 +17,12 @@
 It is as easy as:
 
 ```jsx
-// 👇 Replace <Canvas />
-<ScissorCanvas />
+<Canvas>
+  // Add Scissored components to the canvas
+  <Scissor />
+</Canvas>
 
+// Define sissor windows.
 <ScissorWindow>
     <Cube color="red" />
 </ScissorWindow>
@@ -51,12 +54,14 @@ npm install @react-three/scissor
 
 ```jsx
 import { Box } from '@react-three/drei'
-import { ScissorCanvas, ScissorWindow } from '@react-three/scissor'
+import { Scissor, ScissorWindow } from '@react-three/scissor'
 
 export default function App() {
   return (
     <>
-      <ScissorCanvas {/* Any R3F Canvas props */} />
+      <Canvas>
+        <Scissor />
+      </Canvas>
 
       <div>
         <ScissorWindow>
@@ -65,9 +70,7 @@ export default function App() {
           </Box>
         </ScissorWindow>
 
-        <ScissorWindow>
-          {/* Any R3F Components */}
-        </ScissorWindow>
+        <ScissorWindow>{/* Any R3F Components */}</ScissorWindow>
       </div>
     </>
   )

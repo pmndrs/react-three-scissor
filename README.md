@@ -131,5 +131,6 @@ const StyledScissorWindow = styled(ScissorWindow)`
 Major TODOs
 
 - [ ] Controls support
-- [ ] Drei helpers support
+- [ ] `<Environment />` support
+- [ ] Other Drei helpers support
 - [ ] Per-window camera

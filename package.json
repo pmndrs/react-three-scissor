@@ -6,6 +6,7 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
+  "homepage": "https://github.com/pmndrs/react-three-scissor#readme",
   "scripts": {
     "build": "rollup -c",
     "postbuild": "tsc --emitDeclarationOnly",
@@ -78,11 +79,5 @@
     "typescript": "^4.4.4",
     "zustand": "^3.6.9"
   },
-  "homepage": "https://github.com/pmndrs/react-three-scissor#readme",
-  "dependencies": {},
-  "peerDependencies": {
-    "@react-three/fiber": "^7.0.25",
-    "three": "^0.136.0",
-    "zustand": "^3.6.9"
-  }
+  "dependencies": {}
 }

@@ -16,6 +16,7 @@ function tunnel() {
   }))
 
   return {
+    Store: useStore,
     In: ({ children }: Props) => {
       const addScene = useStore((state) => state.addScene)
       useLayoutEffect(() => addScene(children), [])

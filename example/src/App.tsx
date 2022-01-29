@@ -2,13 +2,11 @@ import React, { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Scissor, ScissorWindow } from '@react-three/scissor'
 import styled from 'styled-components'
-import { Center } from '@react-three/drei'
-import { Leva, LevaPanel, useControls } from 'leva'
+import { Leva, useControls } from 'leva'
 
 import { AnimatePresence, motion } from 'framer-motion'
 
 import useMesh from './useMesh'
-import { MathUtils } from 'three'
 import Model from './Model'
 
 const variants = {
@@ -37,7 +35,7 @@ function Animals() {
     nMesh: {
       min: 1,
       max: 100,
-      value: 20,
+      value: 1,
       label: 'Number of meshes',
     },
   })

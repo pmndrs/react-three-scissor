@@ -1,7 +1,8 @@
-import { Center, useCursor } from '@react-three/drei'
+import { Center, Environment, OrbitControls, OrbitControlsProps, PerspectiveCamera, useCursor } from '@react-three/drei'
 import { useSpring, a } from '@react-spring/three'
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { MathUtils, Mesh } from 'three'
+import Lights from './Lights'
 
 export default function Model({ mesh }: { mesh: Mesh }) {
   const [hovered, setHover] = useState(false)
@@ -14,6 +15,7 @@ export default function Model({ mesh }: { mesh: Mesh }) {
   return (
     <a.group {...springs}>
       <gridHelper />
+
       <group
         scale={0.02}
         rotation-x={MathUtils.degToRad(90)}
@@ -21,9 +23,11 @@ export default function Model({ mesh }: { mesh: Mesh }) {
         onPointerOut={() => setHover(false)}
         onClick={() => setActive(!active)}
       >
+        <Lights />
+
         <Center>
           <mesh castShadow geometry={mesh.geometry}>
-            <meshBasicMaterial vertexColors />
+            <meshPhongMaterial vertexColors />
           </mesh>
         </Center>
       </group>

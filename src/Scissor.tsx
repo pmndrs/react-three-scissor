@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import { useLayoutEffect } from 'react'
 import ScissorTunnel from './ScissorTunnel'
 import useScissorEvents from './useScissorEvents'
 import { Object3D } from 'three'
 
-export default function useScissor() {
+export default function Scissor() {
   const gl = useThree((s) => s.gl)
 
   useScissorEvents()
@@ -17,7 +17,6 @@ export default function useScissor() {
     gl.setScissorTest(true)
 
     const children = state.scene.children
-
     children.forEach((child: Object3D) => {
       if (child.userData.__Scissor) {
         // console.log(child.userData.__Scissor);

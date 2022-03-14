@@ -41,7 +41,7 @@ Havigng multiple WebGL contests within one webpage is generally a bad idea becau
 - **The browser limits how many WebGL contexts you can have.** Typically that limit is around 8 of them. After which, the oldest ones lose context.
 - **WebGL resources can not be shared across contexts.** That means expensive operation like loading models and compiling shaders would have to be repeated.
 
-Instead, we create the issusion of multiple canvases by having one large one and drawing on very speciifc parts of it. This process is called Scissoring.
+Instead, we create the illusion of multiple canvases by having one large one and drawing on very speciifc parts of it. This process is called Scissoring.
 
 ## Getting Started
 

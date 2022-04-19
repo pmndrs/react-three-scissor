@@ -5,12 +5,14 @@
 
 <br>
 
-[![Version](https://img.shields.io/npm/v/@react-three/scissor?style=flat&colorA=000000&colorB=000000)](https://npmjs.com/package/@react-three/scissor)
-[![Downloads](https://img.shields.io/npm/dt/react-three-scissor.svg?style=flat&colorA=000000&colorB=000000)](https://npmjs.com/package/@react-three/scissor)
-[![Twitter](https://img.shields.io/twitter/follow/pmndrs?label=%40pmndrs&style=flat&colorA=000000&colorB=000000&logo=twitter&logoColor=000000)](https://twitter.com/pmndrs)
-[![Discord](https://img.shields.io/discord/740090768164651008?style=flat&colorA=000000&colorB=000000&label=discord&logo=discord&logoColor=000000)](https://discord.gg/ZZjjNvJ)
+<p align="center">
+  <h1 align="center">Depricated! Use <a href="https://github.com/pmndrs/drei#view"><code>&lt;View /&gt;</code></a> from <code>react-three-drei</code></h1>
+</p>
 
 <br>
+
+<details>
+<summary>Show depricated readme</summary>
 
 `scissor` lets you render an infinite number of individual scenes (limited by your processing capability of course) on one single WebGL context and canvas.
 
@@ -134,3 +136,5 @@ Major TODOs
 - [ ] `<Environment />` support
 - [ ] Other Drei helpers support
 - [ ] Per-window camera
+
+</details>
